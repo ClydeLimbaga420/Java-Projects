@@ -1,27 +1,43 @@
+import java.util.Scanner;
 public class Main {
-    public static void main (String[] args) {
-        int [] scores = { 90,87,65,89,98,88,94,95,75,100 };
-        int highScore = 0;
-        int lowScore = scores[0];
-        int total = 0;
-        float average = 0;
-        for ( int i = 0; i < scores.length; i++ ) {
-            if ( highScore <= scores[i] ) {
-                highScore = scores[i];
-            }
-        }
-        System.out.println("Highest Score:"+ highScore);
-        for ( int i = 0; i < scores.length; i++ ) {
-            if ( lowScore >= scores[i] ) {
-                lowScore = scores[i];
-            }
-        }
-        System.out.println("Lowest Score:"+ lowScore);
+    public static void main(String[] args) {
 
-        for ( int i = 0; i < scores.length; i++ ) {
-            total = total + scores[i];
-        }
-        average = total / scores.length;
-        System.out.println("Average:"+average);
+        DoublyLinkedList url = new DoublyLinkedList();
+        int choice;
+        String link;
+        url.addUrl("https://github.com/");
+        url.addUrl("https://facebook.com/");
+        url.addUrl("https://twitter.com/");
+        do {
+
+            System.out.println("What do you want to do?");
+            System.out.println("1. Visit a new site");
+            System.out.println("2. Move Backward");
+            System.out.println("3. Move Forward");
+            System.out.println("4. Display History");
+            System.out.println("Enter Choice >> ");
+            Scanner myScanner = new Scanner(System.in);
+            choice = myScanner.nextInt();
+            myScanner.nextLine();
+
+
+            if ( choice == 1 ) {
+                System.out.println("Enter the URL");
+                link =  myScanner.nextLine();
+                url.addUrl(link);
+            } else if ( choice == 2 ) {
+                url.moveBackward();
+            }  else if ( choice == 3 ) {
+                url.moveForward();
+            } else if ( choice == 4 ) {
+                url.displayForward();
+                url.displayBackward();
+            } else {
+                System.out.println("Invalid");
+            }
+
+
+
+        } while (true);
     }
 }
