@@ -32,7 +32,7 @@ public class Stacks {
     }
     public void pop() {
         if (isEmpty()) {
-            System.out.println("Stack is empty");
+            System.out.println("Stack Underflow");
         } else if (head.next == null) {
             int data = head.data;
             head = null;
@@ -53,11 +53,14 @@ public class Stacks {
         if (isEmpty()) {
             System.out.println("Stack is empty");
         } else {
+
             Node temp = head;
             while (temp.next != null) {
                 temp = temp.next;
             }
-            System.out.println(temp.data);
+
+            System.out.println("Top number >> " + temp.data);
+
         }
     }
     public int size() {
@@ -68,7 +71,6 @@ public class Stacks {
             System.out.println("Stack is empty");
         } else {
             Node temp = head;
-            System.out.print("Stack elements: ");
             while (temp != null) {
                 System.out.print(temp.data + " ");
                 temp = temp.next;
@@ -88,7 +90,6 @@ public class Stacks {
         Node temp = head;
         while (temp != null) {
             if (temp.data == data) {
-                System.out.println("Found");
                 return true;
 
             }
@@ -96,7 +97,6 @@ public class Stacks {
 
             temp = temp.next;
         }
-        System.out.println("Not found");
         return false;
     }
 }
