@@ -1,10 +1,10 @@
 import java.util.Scanner;
-public class BubbleSort {
+public class Main {
     public static void main( String[] args ) {
 
         Scanner input = new Scanner(System.in);
         int temp;
-        boolean run = true;
+
 
         System.out.print("Enter size of the array >> ");
         int size = input.nextInt();
@@ -59,8 +59,6 @@ public class BubbleSort {
                     }
                     System.out.println(" ");
                 }
-            } else if ( choice == 3 ) {
-                run = false;
             } else {
                 System.out.println("Invalid Choice");
             }
